@@ -10,11 +10,22 @@ public struct AboutScreenAppInfo {
     public let version: String
     /// The app's icon
     public let icon: UIImage
+
+    public init(name: String, version: String, icon: UIImage) {
+        self.name = name
+        self.version = version
+        self.icon = icon
+    }
 }
 
 public struct AboutScreenFonts {
     public let appName: UIFont
     public let appVersion: UIFont
+
+    public init(appName: UIFont, appVersion: UIFont) {
+        self.appName = appName
+        self.appVersion = appVersion
+    }
 
     static let defaultFonts: AboutScreenFonts = {
         // Title is serif semibold large title

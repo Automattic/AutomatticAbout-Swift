@@ -101,7 +101,7 @@ public class AutomatticAboutScreen: UIViewController {
     // MARK: - View lifecycle
 
     /// This is the preferred way to create an About screen to present, as a navigation controller is required.
-    static func controller(appInfo: AboutScreenAppInfo? = nil, configuration: AboutScreenConfiguration, fonts: AboutScreenFonts? = nil, isSubmenu: Bool = false) -> UIViewController {
+    public static func controller(appInfo: AboutScreenAppInfo? = nil, configuration: AboutScreenConfiguration, fonts: AboutScreenFonts? = nil, isSubmenu: Bool = false) -> UIViewController {
         let viewController = AutomatticAboutScreen(appInfo: appInfo,
                                                    configuration: configuration,
                                                    fonts: fonts,
