@@ -5,16 +5,16 @@ import UIKit
 /// Defines the content of the header that appears on the top level about screen.
 public struct AboutScreenAppInfo {
     /// The app's name
-    let name: String
+    public let name: String
     /// The current build version of the app
-    let version: String
+    public let version: String
     /// The app's icon
-    let icon: UIImage
+    public let icon: UIImage
 }
 
 public struct AboutScreenFonts {
-    let appName: UIFont
-    let appVersion: UIFont
+    public let appName: UIFont
+    public let appVersion: UIFont
 
     static let defaultFonts: AboutScreenFonts = {
         // Title is serif semibold large title
