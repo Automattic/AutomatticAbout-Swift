@@ -123,7 +123,7 @@ public class AutomatticAboutScreen: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         if isSubmenu {
@@ -144,7 +144,7 @@ public class AutomatticAboutScreen: UIViewController {
         tableView.reloadData()
     }
 
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
 
         if let indexPath = appLogosIndexPath {
@@ -155,7 +155,7 @@ public class AutomatticAboutScreen: UIViewController {
         }
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
+    override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
         if isMovingFromParent || isBeingDismissedDirectlyOrByAncestor() {
@@ -163,7 +163,7 @@ public class AutomatticAboutScreen: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         navigationController?.setNavigationBarHidden(!shouldShowNavigationBar, animated: true)
@@ -199,15 +199,15 @@ public class AutomatticAboutScreen: UIViewController {
 // MARK: - Table view data source
 
 extension AutomatticAboutScreen: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = sections[indexPath.section]
         let item = section[indexPath.row]
 
@@ -222,14 +222,14 @@ extension AutomatticAboutScreen: UITableViewDataSource {
         return cell
     }
 
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let section = sections[indexPath.section]
         let item = section[indexPath.row]
 
         cell.separatorInset = item.hidesSeparator ? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude) : tableView.separatorInset
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = sections[indexPath.section]
         let item = section[indexPath.row]
 
@@ -240,7 +240,7 @@ extension AutomatticAboutScreen: UITableViewDataSource {
 // MARK: - Table view delegate
 
 extension AutomatticAboutScreen: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = sections[indexPath.section]
         let item = section[indexPath.row]
 
