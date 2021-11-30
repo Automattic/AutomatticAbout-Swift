@@ -161,7 +161,7 @@ private class AppLogosScene: SKScene {
 
     private func makeBall(for app: App) -> SKNode? {
         guard let view = view,
-              let image = UIImage(named: Constants.appLogoPrefix + app.image, in: .main, compatibleWith: traitCollection) else {
+              let image = UIImage(named: Constants.appLogoPrefix + app.image, in: .module, compatibleWith: traitCollection) else {
             return nil
         }
 
