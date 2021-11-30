@@ -244,7 +244,7 @@ private class AppLogosScene: SKScene {
     }
 
     enum Constants {
-        static let appLogoPrefix = "ua-logo-"
+        static let appLogoPrefix = "logo-"
         static let physicsRestitution: CGFloat = 0.5
         static let phyicsContactDebounce: TimeInterval = 0.25
         static let hapticsImpulseThreshold: TimeInterval = 0.10
