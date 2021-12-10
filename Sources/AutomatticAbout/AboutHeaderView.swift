@@ -110,6 +110,7 @@ final class AboutHeaderView: UIView {
         let appVersionLabel = makeAppVersionLabel()
         let closeButton = makeCloseButton()
 
+        translatesAutoresizingMaskIntoConstraints = false
         clipsToBounds = true
 
         [iconView, appNameLabel, appVersionLabel].forEach(stackView.addArrangedSubview)
@@ -121,12 +122,11 @@ final class AboutHeaderView: UIView {
         addSubview(closeButton)
 
         NSLayoutConstraint.activate([
-            iconView.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
             iconView.heightAnchor.constraint(equalToConstant: sizing.appIconWidthAndHeight),
             iconView.widthAnchor.constraint(equalToConstant: sizing.appIconWidthAndHeight),
 
-            appNameLabel.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
-            appVersionLabel.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
+            stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Metrics.edgeMargin),
+            stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Metrics.edgeMargin),
 
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: spacing.aboveAndBelowHeaderView),
@@ -157,6 +157,7 @@ final class AboutHeaderView: UIView {
         appNameLabel.lineBreakMode = .byWordWrapping
         appNameLabel.numberOfLines = 1
         appNameLabel.font = fonts.appName
+        appNameLabel.adjustsFontForContentSizeCategory = true
         return appNameLabel
     }
 
@@ -164,10 +165,12 @@ final class AboutHeaderView: UIView {
         let appVersionLabel = UILabel()
 
         appVersionLabel.text = appInfo.version
+        appVersionLabel.textAlignment = .center
         appVersionLabel.lineBreakMode = .byWordWrapping
-        appVersionLabel.numberOfLines = 1
+        appVersionLabel.numberOfLines = 2
         appVersionLabel.font = fonts.appVersion
         appVersionLabel.textColor = .secondaryLabel
+        appVersionLabel.adjustsFontForContentSizeCategory = true
         return appVersionLabel
     }
 
@@ -210,5 +213,6 @@ final class AboutHeaderView: UIView {
         static let closeButtonRadius: CGFloat = 30
         static let closeButtonInset: CGFloat = 16
         static let closeButtonSymbolSize: CGFloat = 16
+        static let edgeMargin: CGFloat = 16.0
     }
 }
