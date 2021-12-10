@@ -32,14 +32,27 @@ class AutomatticAppLogosCell: UITableViewCell {
         contentView.addSubview(spriteKitView)
         spriteKitView.translatesAutoresizingMaskIntoConstraints = false
 
-        NSLayoutConstraint.activate([
+        configureConstraints()
+    }
+
+    private func configureConstraints() {
+        let edgeConstraints: [NSLayoutConstraint] = [
+            contentView.leadingAnchor.constraint(equalTo: spriteKitView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: spriteKitView.trailingAnchor)
+        ]
+        edgeConstraints.forEach({ $0.priority = .defaultLow })
+
+        var constraints: [NSLayoutConstraint] = [
             contentView.leadingAnchor.constraint(lessThanOrEqualTo: spriteKitView.leadingAnchor),
             contentView.trailingAnchor.constraint(greaterThanOrEqualTo: spriteKitView.trailingAnchor),
             contentView.topAnchor.constraint(equalTo: spriteKitView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: spriteKitView.bottomAnchor),
             spriteKitView.widthAnchor.constraint(lessThanOrEqualToConstant: Metrics.maxWidth),
             spriteKitView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor)
-        ])
+        ]
+        constraints.append(contentsOf: edgeConstraints)
+
+        NSLayoutConstraint.activate(constraints)
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
