@@ -18,7 +18,8 @@ let package = Package(
     targets: [
         .target(
             name: "AutomatticAbout",
-            dependencies: []),
+            dependencies: [],
+            path: "Sources/AutomatticAbout"),
         .testTarget(
             name: "AutomatticAboutTests",
             dependencies: ["AutomatticAbout"]),

@@ -67,3 +67,5 @@ And here's an example of displaying an about screen using the above configuratio
         self.tableView.deselectSelectedRow(animated: true)
     }
 ```
+
+Example project app icon uses an image from [Twitter's open source emoji library](https://twemoji.twitter.com).
