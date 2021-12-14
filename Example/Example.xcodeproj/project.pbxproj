@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176E13A62767656B00BB2747 /* PocketCastsAboutScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E13A22767656B00BB2747 /* PocketCastsAboutScreenConfiguration.swift */; };
+		176E13A72767656B00BB2747 /* SimplenoteAboutScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E13A32767656B00BB2747 /* SimplenoteAboutScreenConfiguration.swift */; };
+		176E13A82767656B00BB2747 /* TumblrAboutScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E13A42767656B00BB2747 /* TumblrAboutScreenConfiguration.swift */; };
+		176E13A92767656B00BB2747 /* WooAboutScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 176E13A52767656B00BB2747 /* WooAboutScreenConfiguration.swift */; };
 		17A885B8275A57270071FCA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A885B7275A57270071FCA3 /* AppDelegate.swift */; };
 		17A885BA275A57270071FCA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A885B9275A57270071FCA3 /* SceneDelegate.swift */; };
 		17A885BC275A57270071FCA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A885BB275A57270071FCA3 /* ViewController.swift */; };
@@ -15,9 +19,14 @@
 		17A885C4275A57280071FCA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17A885C2275A57280071FCA3 /* LaunchScreen.storyboard */; };
 		17A885CE275A58AE0071FCA3 /* AutomatticAbout in Frameworks */ = {isa = PBXBuildFile; productRef = 17A885CD275A58AE0071FCA3 /* AutomatticAbout */; };
 		17A885D0275A58D50071FCA3 /* AppAboutScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A885CF275A58D50071FCA3 /* AppAboutScreenConfiguration.swift */; };
+		17A885D2275A6B370071FCA3 /* DayOneAboutScreenConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A885D1275A6B370071FCA3 /* DayOneAboutScreenConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		176E13A22767656B00BB2747 /* PocketCastsAboutScreenConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PocketCastsAboutScreenConfiguration.swift; sourceTree = "<group>"; };
+		176E13A32767656B00BB2747 /* SimplenoteAboutScreenConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimplenoteAboutScreenConfiguration.swift; sourceTree = "<group>"; };
+		176E13A42767656B00BB2747 /* TumblrAboutScreenConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TumblrAboutScreenConfiguration.swift; sourceTree = "<group>"; };
+		176E13A52767656B00BB2747 /* WooAboutScreenConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WooAboutScreenConfiguration.swift; sourceTree = "<group>"; };
 		17A885B4275A57270071FCA3 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A885B7275A57270071FCA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17A885B9275A57270071FCA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +37,7 @@
 		17A885C5275A57280071FCA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17A885CB275A585C0071FCA3 /* AutomatticAbout */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AutomatticAbout; path = ../..; sourceTree = "<group>"; };
 		17A885CF275A58D50071FCA3 /* AppAboutScreenConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAboutScreenConfiguration.swift; sourceTree = "<group>"; };
+		17A885D1275A6B370071FCA3 /* DayOneAboutScreenConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOneAboutScreenConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +76,11 @@
 				17A885B9275A57270071FCA3 /* SceneDelegate.swift */,
 				17A885BB275A57270071FCA3 /* ViewController.swift */,
 				17A885CF275A58D50071FCA3 /* AppAboutScreenConfiguration.swift */,
+				17A885D1275A6B370071FCA3 /* DayOneAboutScreenConfiguration.swift */,
+				176E13A52767656B00BB2747 /* WooAboutScreenConfiguration.swift */,
+				176E13A22767656B00BB2747 /* PocketCastsAboutScreenConfiguration.swift */,
+				176E13A32767656B00BB2747 /* SimplenoteAboutScreenConfiguration.swift */,
+				176E13A42767656B00BB2747 /* TumblrAboutScreenConfiguration.swift */,
 				17A885BD275A57270071FCA3 /* Main.storyboard */,
 				17A885C0275A57280071FCA3 /* Assets.xcassets */,
 				17A885C2275A57280071FCA3 /* LaunchScreen.storyboard */,
@@ -156,10 +171,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				176E13A82767656B00BB2747 /* TumblrAboutScreenConfiguration.swift in Sources */,
+				176E13A92767656B00BB2747 /* WooAboutScreenConfiguration.swift in Sources */,
 				17A885D0275A58D50071FCA3 /* AppAboutScreenConfiguration.swift in Sources */,
+				17A885D2275A6B370071FCA3 /* DayOneAboutScreenConfiguration.swift in Sources */,
+				176E13A72767656B00BB2747 /* SimplenoteAboutScreenConfiguration.swift in Sources */,
 				17A885BC275A57270071FCA3 /* ViewController.swift in Sources */,
 				17A885B8275A57270071FCA3 /* AppDelegate.swift in Sources */,
 				17A885BA275A57270071FCA3 /* SceneDelegate.swift in Sources */,
+				176E13A62767656B00BB2747 /* PocketCastsAboutScreenConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
