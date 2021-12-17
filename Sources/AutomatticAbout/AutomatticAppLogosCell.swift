@@ -2,10 +2,23 @@ import UIKit
 import SpriteKit
 import CoreMotion
 
+
+enum HapticsState {
+    case active
+    case paused
+}
+
 /// A table view cell that contains a SpriteKit game scene which shows logos
 /// of the various apps from Automattic.
 ///
 class AutomatticAppLogosCell: UITableViewCell {
+
+    var hapticsState: HapticsState = .active {
+        didSet {
+            logosScene.hapticsState = hapticsState
+        }
+    }
+
     private var logosScene: AppLogosScene!
     private var spriteKitView: SKView!
 
@@ -105,6 +118,8 @@ private class AppLogosScene: SKScene {
     // Haptics
     fileprivate var softGenerator = UIImpactFeedbackGenerator(style: .soft)
     fileprivate var rigidGenerator = UIImpactFeedbackGenerator(style: .rigid)
+
+    var hapticsState: HapticsState = .active
 
     // Keeps track of the last time a specific physics body made contact.
     // Used to limit the number of haptics impacts we trigger as a result of collisions.
@@ -297,6 +312,10 @@ private class AppLogosScene: SKScene {
 
 extension AppLogosScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
+        guard hapticsState == .active else {
+            return
+        }
+
         let currentTime = CACurrentMediaTime()
 
         // If we trigger a haptics impact for every single impact it feels a bit much,
