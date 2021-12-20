@@ -150,7 +150,7 @@ private class AppLogosScene: SKScene {
     // MARK: - Scene creation
 
     private func generateScene() {
-        backgroundColor = .secondarySystemGroupedBackground
+        backgroundColor = .clear
 
         let edge = SKPhysicsBody(edgeLoopFrom: frame)
         edge.categoryBitMask = edgeCategory
