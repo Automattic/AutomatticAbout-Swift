@@ -163,6 +163,10 @@ public class AutomatticAboutScreen: UIViewController {
     override public func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 
+        for cell in tableView.visibleCells {
+            attemptToSetHapticState(.paused, for: cell)
+        }
+
         if isMovingFromParent || isBeingDismissedDirectlyOrByAncestor() {
             configuration.didHide(viewController: self)
         }
@@ -170,6 +174,10 @@ public class AutomatticAboutScreen: UIViewController {
 
     override public func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        for cell in tableView.visibleCells {
+            attemptToSetHapticState(.active, for: cell)
+        }
 
         navigationController?.setNavigationBarHidden(!shouldShowNavigationBar, animated: true)
 
@@ -193,6 +201,16 @@ public class AutomatticAboutScreen: UIViewController {
 
         headerView.frame.size.height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         tableView.tableHeaderView = headerView
+    }
+
+    /// If the provided cell is an AutomatticAppLogosCell, set the haptic state to the requested one.
+    ///
+    private func attemptToSetHapticState(_ state: HapticsState, for cell: UITableViewCell) {
+        guard let cell = cell as? AutomatticAppLogosCell else {
+            return
+        }
+
+        cell.hapticsState = state
     }
 
     // MARK: - Actions
@@ -244,13 +262,6 @@ extension AutomatticAboutScreen: UITableViewDataSource {
         return cell
     }
 
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let section = sections[indexPath.section]
-        let item = section[indexPath.row]
-
-        cell.separatorInset = item.hidesSeparator ? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude) : tableView.separatorInset
-    }
-
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let section = sections[indexPath.section]
         let item = section[indexPath.row]
@@ -271,6 +282,19 @@ extension AutomatticAboutScreen: UITableViewDelegate {
         item.action?(context)
 
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let section = sections[indexPath.section]
+        let item = section[indexPath.row]
+
+        cell.separatorInset = item.hidesSeparator ? UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude) : tableView.separatorInset
+
+        attemptToSetHapticState(.active, for: cell)
+    }
+
+    public func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        attemptToSetHapticState(.paused, for: cell)
     }
 }
 
