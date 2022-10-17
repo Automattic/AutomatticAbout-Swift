@@ -101,7 +101,6 @@ private class AppLogosScene: SKScene {
         App(color: UIColor(red: 0.96, green: 0.24, blue: 0.22, alpha: 1.00), image: "pocketcasts"),
         App(color: UIColor(red: 0.27, green: 0.75, blue: 1.00, alpha: 1.00), image: "dayone"),
         App(color: UIColor(red: 0.00, green: 0.75, blue: 0.16, alpha: 1.00), image: "jetpack"),
-        App(color: UIColor(red: 0.02, green: 0.46, blue: 0.77, alpha: 1.00), image: "wp")
     ]
 
     // Collision categories
