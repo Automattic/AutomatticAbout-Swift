@@ -1,10 +1,10 @@
 # AutomatticAbout
 
-This package provides classes that can be used to show an About screen in a host app, such as this example from WordPress for iOS:
+This package provides classes that can be used to show an About screen in a host app, such as this example from Jetpack for iOS:
 
-<img src="Images/about-screen.png" width=300 alt="A screenshot of the WordPress for iOS About screen">
+<img src="Images/about-screen.png" width=300 alt="A screenshot of the Jetpack for iOS About screen">
 
-Host apps must provide an `AboutScreenConfiguration`, which specifies the structure and behavior of the about screen. For a real world example, check out the [configuration for WordPress for iOS](https://github.com/wordpress-mobile/WordPress-iOS/blob/develop/WordPress/Classes/ViewRelated/Me/App%20Settings/About/AppAboutScreenConfiguration.swift). Apps should also provide an `AboutScreenAppInfo` instance containing the app's icon, title, and version to be displayed in the header of the about screen.
+Host apps must provide an `AboutScreenConfiguration`, which specifies the structure and behavior of the about screen. For a real world example, check out the [configuration for Jetpack for iOS](https://github.com/wordpress-mobile/WordPress-iOS/blob/trunk/WordPress/Classes/ViewRelated/Me/App%20Settings/About/AppAboutScreenConfiguration.swift). Apps should also provide an `AboutScreenAppInfo` instance containing the app's icon, title, and version to be displayed in the header of the about screen.
 
 The [`AboutScreenConfiguration` protocol](https://github.com/Automattic/AutomatticAbout-Swift/blob/main/Sources/AutomatticAbout/AboutScreenConfiguration.swift) contains an array of `sections` describing each section within the screen. Each of those is itself an array of `AboutItem`s, which can have titles, subtitles, cell styles, an action, and more.
 
@@ -18,9 +18,9 @@ struct AppAboutScreenConfiguration: AboutScreenConfiguration {
         [
             // Section one, containing a single 'Blog' item
             [
-                AboutItem(title: "Blog", subtitle: "blog.wordpress.com", cellStyle: .subtitle, action: { context in
+                AboutItem(title: "Blog", subtitle: "jetpack.com/blog", cellStyle: .subtitle, action: { context in
                     // Perform an action, such as...
-                    let vc = SFSafariViewController(url: URL(string: "https://blog.wordpress.com")!)
+                    let vc = SFSafariViewController(url: URL(string: "https://jetpack.com/blog")!)
                     context.viewController.present(vc, animated: true, completion: nil)
                 })
             ],
