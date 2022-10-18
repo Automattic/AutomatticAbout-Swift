@@ -72,7 +72,6 @@ class AppAboutScreenConfiguration: AboutScreenConfiguration {
     }
 
     private enum Links {
-        static let rateUs           = URL(string: "https://itunes.apple.com/app/id1565481562?mt=8&action=write-review")!
         static let twitter          = URL(string: "https://twitter.com/jetpack")!
         static let blog             = URL(string: "https://jetpack.com/blog")!
         static let automatticFamily = URL(string: "https://automattic.com")!
