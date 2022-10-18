@@ -66,15 +66,15 @@ class AppAboutScreenConfiguration: AboutScreenConfiguration {
     }
 
     private enum Subtitles {
-        static let twitter          = "@WordPressiOS"
-        static let blog             = "blog.wordpress.com"
+        static let twitter          = "@jetpack"
+        static let blog             = "jetpack.com/blog"
         static let workWithUs       = NSLocalizedString("Join from anywhere", comment: "Subtitle for button displaying the Automattic Work With Us web page, indicating that Automattic employees can work from anywhere in the world")
     }
 
     private enum Links {
-        static let rateUs           = URL(string: "https://itunes.apple.com/app/id335703880?mt=8&action=write-review")!
-        static let twitter          = URL(string: "https://twitter.com/WordPressiOS")!
-        static let blog             = URL(string: "https://blog.wordpress.com")!
+        static let rateUs           = URL(string: "https://itunes.apple.com/app/id1565481562?mt=8&action=write-review")!
+        static let twitter          = URL(string: "https://twitter.com/jetpack")!
+        static let blog             = URL(string: "https://jetpack.com/blog")!
         static let automatticFamily = URL(string: "https://automattic.com")!
         static let workWithUs       = URL(string: "https://automattic.com/work-with-us")!
     }
