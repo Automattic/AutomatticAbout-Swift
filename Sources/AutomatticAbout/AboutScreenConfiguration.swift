@@ -65,14 +65,18 @@ public struct AboutItem {
     /// The action will be passed an `AboutItemActionContext` containing references to the view controller
     /// and the source view that triggered the action.
     public let action: AboutItemAction?
+    
+    /// System image name used for creating image view for accessory view
+    public let accessoryViewSystemImage: String?
 
-    public init(title: String, subtitle: String? = nil, cellStyle: AboutItemCellStyle = .default, accessoryType: UITableViewCell.AccessoryType = .none, hidesSeparator: Bool = false, action: AboutItemAction? = nil) {
+    public init(title: String, subtitle: String? = nil, cellStyle: AboutItemCellStyle = .default, accessoryType: UITableViewCell.AccessoryType = .none, hidesSeparator: Bool = false, action: AboutItemAction? = nil, accessoryViewSystemImage: String? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.cellStyle = cellStyle
         self.accessoryType = accessoryType
         self.hidesSeparator = hidesSeparator
         self.action = action
+        self.accessoryViewSystemImage = accessoryViewSystemImage
     }
 
     public enum AboutItemCellStyle: String {

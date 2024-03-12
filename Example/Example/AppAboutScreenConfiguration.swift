@@ -6,7 +6,7 @@ class AppAboutScreenConfiguration: AboutScreenConfiguration {
     var sections: [AboutScreenSection] {
         [
             [
-                AboutItem(title: Titles.rateUs),
+                AboutItem(title: Titles.rateUs, accessoryViewSystemImage: "star"),
                 AboutItem(title: Titles.twitter, subtitle: Subtitles.twitter, cellStyle: .value1, action: { [weak self] context in
                     self?.present(url: Links.twitter, from: context.viewController)
                 }),
