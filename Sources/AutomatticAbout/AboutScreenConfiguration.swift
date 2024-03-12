@@ -67,9 +67,9 @@ public struct AboutItem {
     public let action: AboutItemAction?
     
     /// System image name used for creating image view for accessory view
-    public let accessoryViewSystemImage: String?
+    public let accessoryViewSystemImage: (name: String, tintColor: UIColor?)?
 
-    public init(title: String, subtitle: String? = nil, cellStyle: AboutItemCellStyle = .default, accessoryType: UITableViewCell.AccessoryType = .none, hidesSeparator: Bool = false, action: AboutItemAction? = nil, accessoryViewSystemImage: String? = nil) {
+    public init(title: String, subtitle: String? = nil, cellStyle: AboutItemCellStyle = .default, accessoryType: UITableViewCell.AccessoryType = .none, hidesSeparator: Bool = false, action: AboutItemAction? = nil, accessoryViewSystemImage: (name: String, tintColor: UIColor?)? = nil) {
         self.title = title
         self.subtitle = subtitle
         self.cellStyle = cellStyle

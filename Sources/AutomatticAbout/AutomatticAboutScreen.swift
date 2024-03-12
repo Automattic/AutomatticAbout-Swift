@@ -259,7 +259,6 @@ extension AutomatticAboutScreen: UITableViewDataSource {
         cell.accessoryType = item.accessoryType
         cell.selectionStyle = item.cellSelectionStyle
         cell.accessoryView = item.accessoryView
-        cell.accessoryView?.tintColor = .secondaryLabel
 
         return cell
     }
@@ -338,7 +337,10 @@ private extension AboutItem {
         guard let accessoryViewSystemImage else {
             return nil
         }
-        let imageView = UIImageView(image: UIImage(systemName: accessoryViewSystemImage)?.withRenderingMode(.alwaysTemplate))
+        let imageView = UIImageView(image: UIImage(systemName: accessoryViewSystemImage.name)?.withRenderingMode(.alwaysTemplate))
+        if let tintColor = accessoryViewSystemImage.tintColor {
+            imageView.tintColor = tintColor
+        }
         return imageView
     }
 }
