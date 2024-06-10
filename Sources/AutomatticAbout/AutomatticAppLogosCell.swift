@@ -124,7 +124,7 @@ private class AppLogosScene: SKScene {
     // Used to limit the number of haptics impacts we trigger as a result of collisions.
     fileprivate var contacts: [SKPhysicsBody: TimeInterval] = [:]
 
-    private var bounds: CGRect {
+    fileprivate override var bounds: CGRect {
         view?.bounds ?? .zero
     }
 
