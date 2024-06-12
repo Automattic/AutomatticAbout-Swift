@@ -53,7 +53,7 @@ class AppAboutScreenConfiguration: AboutScreenConfiguration {
 
         return AboutScreenAppInfo(name: name,
                                   version: "Version \(version)",
-                                  icon: UIImage(named: "AppIcon")!)
+                                  icon: UIImage(systemName: "app")!)
     }
 
     private enum Titles {

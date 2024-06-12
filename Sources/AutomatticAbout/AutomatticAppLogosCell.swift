@@ -124,7 +124,7 @@ private class AppLogosScene: SKScene {
     // Used to limit the number of haptics impacts we trigger as a result of collisions.
     fileprivate var contacts: [SKPhysicsBody: TimeInterval] = [:]
 
-    private var bounds: CGRect {
+    private var viewBounds: CGRect {
         view?.bounds ?? .zero
     }
 
@@ -228,8 +228,8 @@ private class AppLogosScene: SKScene {
 
         // Ensure we only spawn balls in an area in the center that's inset
         // from either side by the radius of a ball plus some padding
-        let spawnArea = bounds.insetBy(dx: Metrics.edgePadding + Metrics.ballRadius,
-                                       dy: Metrics.edgePadding + Metrics.ballRadius)
+        let spawnArea = viewBounds.insetBy(dx: Metrics.edgePadding + Metrics.ballRadius,
+                                           dy: Metrics.edgePadding + Metrics.ballRadius)
 
         ball.position = CGPoint(x: spawnArea.minX + CGFloat(arc4random_uniform(UInt32(spawnArea.width))),
                                 y: spawnArea.minY + CGFloat(arc4random_uniform(UInt32(spawnArea.height))))
