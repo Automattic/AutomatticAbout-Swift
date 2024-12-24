@@ -95,7 +95,7 @@ private class AppLogosScene: SKScene {
     }
 
     private let apps: [App] = [
-        App(color: UIColor(red: 0.49, green: 0.34, blue: 0.64, alpha: 1.00), image: "woo"),
+        App(color: UIColor(red: 0.72, green: 0.60, blue: 1.00, alpha: 1.00), image: "woo"),
         App(color: UIColor(red: 0.00, green: 0.10, blue: 0.21, alpha: 1.00), image: "tumblr"),
         App(color: UIColor(red: 0.20, green: 0.38, blue: 0.80, alpha: 1.00), image: "simplenote"),
         App(color: UIColor(red: 0.96, green: 0.24, blue: 0.22, alpha: 1.00), image: "pocketcasts"),
